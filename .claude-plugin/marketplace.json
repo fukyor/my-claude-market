@@ -8,6 +8,11 @@
       "name": "review-plugin",
       "source": "./plugins/review-plugin",
       "description": "Adds a /rc skill for quick code reviews"
+    },
+    {
+      "name": "skill-creator",
+      "source": "./plugins/skill-creator",
+      "description": "Adds a /sc skill for create skills"
     }
   ]
 }
