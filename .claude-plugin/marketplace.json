@@ -1,5 +1,6 @@
 {
   "name": "my-plugins",
+  "description": "my plugins",
   "owner": {
     "name": "gzy"
   },
