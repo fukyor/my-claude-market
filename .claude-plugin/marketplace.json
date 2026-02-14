@@ -7,12 +7,20 @@
     {
       "name": "skill-creator",
       "source": "./plugins/skill-creator",
-      "description": "Adds a /sc skill for create skills"
+      "description": "Adds a /sc skill for create skills",
+      "strict": false,
+      "skills": [
+        "./plugins/skill-creator/skills/sc"
+      ]
     },
     {
       "name": "xlsx",
       "source": "./plugins/xlsx-plugin",
-      "description": "Adds a /xlsx skill for xlsx skills"
+      "description": "Adds a /xlsx skill for xlsx skills",
+      "strict": false,
+      "skills": [
+        "./plugins/skill-creator/skills/xlsx"
+      ]
     }
   ]
 }
