@@ -11,7 +11,7 @@
     },
     {
       "name": "xlsx",
-      "source": "./plugins/xlsx",
+      "source": "./plugins/xlsx-plugin",
       "description": "Adds a /xlsx skill for xlsx skills"
     }
   ]
