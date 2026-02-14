@@ -10,7 +10,7 @@
       "description": "Adds a /sc skill for create skills",
       "strict": false,
       "skills": [
-        "./plugins/skill-creator/skills/sc"
+        "./skills/sc"
       ]
     },
     {
@@ -19,7 +19,7 @@
       "description": "Adds a /xlsx skill for xlsx skills",
       "strict": false,
       "skills": [
-        "./plugins/skill-creator/skills/xlsx"
+        "./skills/xlsx"
       ]
     }
   ]
