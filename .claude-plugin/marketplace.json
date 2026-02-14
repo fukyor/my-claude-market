@@ -1,6 +1,8 @@
 {
   "name": "my-plugins",
-  "description": "my plugins",
+  "metadata": {
+    "description": "这是my plugins"
+  },
   "owner": {
     "name": "gzy"
   },
