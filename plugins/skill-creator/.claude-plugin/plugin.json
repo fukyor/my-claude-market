@@ -16,9 +16,6 @@
     "creator",
     "skill_creator"
   ],
-  "skills": [
-    "./plugins/skill-creator/skills"
-  ],
   "agents": [
     "./plugins/skill-creator/agents/architect.md",
     "./plugins/skill-creator/agents/build-error-resolver.md",

@@ -13,9 +13,6 @@
   "keywords": [
     "xlsx"
   ],
-  "skills": [
-    "./plugins/xlsx-plugin/skills"
-  ],
   "agents": [
     "./plugins/xlsx-plugin/agents/architect.md",
     "./plugins/xlsx-plugin/agents/build-error-resolver.md",
