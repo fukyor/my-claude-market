@@ -16,6 +16,7 @@
     "creator",
     "skill_creator"
   ],
+  "skills": ["./skills/"],
   "agents": [
     "./agents/architect.md",
     "./agents/build-error-resolver.md",
