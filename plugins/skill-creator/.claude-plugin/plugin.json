@@ -1,5 +1,37 @@
+
 {
   "name": "skill-creator",
+  "version": "1.0.0",
   "description": "Adds a /sc skill for create skills",
-  "version": "1.0.0"
-}  
+  "author": {
+    "name": "gzy",
+    "url": "https://github.com/fukyor/"
+  },
+  "homepage": "https://github.com/",
+  "repository": "https://github.com/",
+  "license": "MIT",
+  "keywords": [
+    "skill",
+    "create",
+    "creator",
+    "skill_creator"
+  ],
+  "skills": [
+    "./plugins/skill-creator/skills"
+  ],
+  "agents": [
+    "./plugins/skill-creator/agents/architect.md",
+    "./plugins/skill-creator/agents/build-error-resolver.md",
+    "./plugins/skill-creator/agents/code-reviewer.md",
+    "./plugins/skill-creator/agents/database-reviewer.md",
+    "./plugins/skill-creator/agents/doc-updater.md",
+    "./plugins/skill-creator/agents/e2e-runner.md",
+    "./plugins/skill-creator/agents/go-build-resolver.md",
+    "./plugins/skill-creator/agents/go-reviewer.md",
+    "./plugins/skill-creator/agents/planner.md",
+    "./plugins/skill-creator/agents/python-reviewer.md",
+    "./plugins/skill-creator/agents/refactor-cleaner.md",
+    "./plugins/skill-creator/agents/security-reviewer.md",
+    "./plugins/skill-creator/agents/tdd-guide.md"
+  ]
+}

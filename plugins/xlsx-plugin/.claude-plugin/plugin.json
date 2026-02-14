@@ -1,5 +1,34 @@
+
 {
-  "name": "xlsx",
-  "description": "Adds a /xlsx skill for xlsx skills",
-  "version": "1.0.0"
+  "name": "xlsx-plugin",
+  "version": "1.0.0",
+  "description": "Adds a /xlsx skill for create skills",
+  "author": {
+    "name": "gzy",
+    "url": "https://github.com/fukyor/"
+  },
+  "homepage": "https://github.com/",
+  "repository": "https://github.com/",
+  "license": "MIT",
+  "keywords": [
+    "xlsx"
+  ],
+  "skills": [
+    "./plugins/xlsx-plugin/skills"
+  ],
+  "agents": [
+    "./plugins/xlsx-plugin/agents/architect.md",
+    "./plugins/xlsx-plugin/agents/build-error-resolver.md",
+    "./plugins/xlsx-plugin/agents/code-reviewer.md",
+    "./plugins/xlsx-plugin/agents/database-reviewer.md",
+    "./plugins/xlsx-plugin/agents/doc-updater.md",
+    "./plugins/xlsx-plugin/agents/e2e-runner.md",
+    "./plugins/xlsx-plugin/agents/go-build-resolver.md",
+    "./plugins/xlsx-plugin/agents/go-reviewer.md",
+    "./plugins/xlsx-plugin/agents/planner.md",
+    "./plugins/xlsx-plugin/agents/python-reviewer.md",
+    "./plugins/xlsx-plugin/agents/refactor-cleaner.md",
+    "./plugins/xlsx-plugin/agents/security-reviewer.md",
+    "./plugins/xlsx-plugin/agents/tdd-guide.md"
+  ]
 }
