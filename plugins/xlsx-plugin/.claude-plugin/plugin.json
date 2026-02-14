@@ -14,18 +14,18 @@
     "xlsx"
   ],
   "agents": [
-    "./plugins/xlsx-plugin/agents/architect.md",
-    "./plugins/xlsx-plugin/agents/build-error-resolver.md",
-    "./plugins/xlsx-plugin/agents/code-reviewer.md",
-    "./plugins/xlsx-plugin/agents/database-reviewer.md",
-    "./plugins/xlsx-plugin/agents/doc-updater.md",
-    "./plugins/xlsx-plugin/agents/e2e-runner.md",
-    "./plugins/xlsx-plugin/agents/go-build-resolver.md",
-    "./plugins/xlsx-plugin/agents/go-reviewer.md",
-    "./plugins/xlsx-plugin/agents/planner.md",
-    "./plugins/xlsx-plugin/agents/python-reviewer.md",
-    "./plugins/xlsx-plugin/agents/refactor-cleaner.md",
-    "./plugins/xlsx-plugin/agents/security-reviewer.md",
-    "./plugins/xlsx-plugin/agents/tdd-guide.md"
+    "./agents/architect.md",
+    "./agents/build-error-resolver.md",
+    "./agents/code-reviewer.md",
+    "./agents/database-reviewer.md",
+    "./agents/doc-updater.md",
+    "./agents/e2e-runner.md",
+    "./agents/go-build-resolver.md",
+    "./agents/go-reviewer.md",
+    "./agents/planner.md",
+    "./agents/python-reviewer.md",
+    "./agents/refactor-cleaner.md",
+    "./agents/security-reviewer.md",
+    "./agents/tdd-guide.md"
   ]
 }
