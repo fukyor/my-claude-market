@@ -18,6 +18,12 @@
       "source": "./plugins/xlsx-plugin",
       "description": "Adds a /xlsx skill for xlsx skills",
       "strict": true
+    },
+    {
+      "name": "gh-explorer",
+      "source": "./plugins/github-repo-explorer",
+      "description": "Adds a /ghc skill for create skills",
+      "strict": true
     }
   ]
 }
