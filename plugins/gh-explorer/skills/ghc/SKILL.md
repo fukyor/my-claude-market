@@ -1,5 +1,5 @@
 ---
-name: github-repo-explorer
+name: gh-explorer
 description: 通过 GitHub CLI 远程查询代码仓库信息。适用场景：(1) 浏览远程仓库的目录结构；(2) 查看远程仓库的文件内容；(3) 在远程仓库中搜索代码；(4) 获取仓库元数据（默认分支、描述、主要语言）；(5) 读取仓库 README 了解项目。
 ---
 
