@@ -15,6 +15,6 @@
     "gh",
     "explorer"
   ],
-  "skills": ["./skills/"],
+  "skills": ["./skills/ghc"],
   "agents": []
 }

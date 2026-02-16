@@ -16,7 +16,7 @@ description: 通过 GitHub CLI 远程查询代码仓库信息。适用场景：(
 运行认证脚本：
 
 ```bash
-python scripts/gh_auth.py
+python skills/ghc/scripts/gh_auth.py
 ```
 
 该脚本会：
