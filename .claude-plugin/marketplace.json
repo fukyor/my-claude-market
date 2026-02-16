@@ -21,7 +21,7 @@
     },
     {
       "name": "gh-explorer",
-      "source": "./plugins/github-repo-explorer",
+      "source": "./plugins/gh-explorer",
       "description": "Adds a /ghc skill for create skills",
       "strict": true
     }
