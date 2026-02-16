@@ -11,7 +11,9 @@
   "repository": "https://github.com/",
   "license": "MIT",
   "keywords": [
-    "github-repo-explorer"
+    "github-repo-explorer",
+    "gh",
+    "explorer"
   ],
   "skills": ["./skills/"],
   "agents": []
