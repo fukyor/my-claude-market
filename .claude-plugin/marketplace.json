@@ -22,13 +22,13 @@
     {
       "name": "gh-explorer",
       "source": "./plugins/gh-explorer",
-      "description": "Adds a /ghc skill for create skills",
+      "description": "Adds a /ghc skill for explore repo",
       "strict": true
     },
     {
       "name": "plan-viewer",
       "source": "./plugins/plan-reviewer",
-      "description": "Adds a /pv skill for create skills",
+      "description": "Adds a /pv skill for review pla",
       "strict": true
     }
   ]

@@ -2,7 +2,7 @@
 {
   "name": "gh-explorer",
   "version": "1.0.0",
-  "description": "Adds a /ghc skill for create skills",
+  "description": "Adds a /ghc skill for explore repo",
   "author": {
     "name": "gzy",
     "url": "https://github.com/fukyor/"

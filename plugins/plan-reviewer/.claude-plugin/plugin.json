@@ -2,7 +2,7 @@
 {
   "name": "plan-viewer",
   "version": "1.0.0",
-  "description": "Adds a /pv skill for create skills",
+  "description": "Adds a /pv skill for review plan",
   "author": {
     "name": "gzy",
     "url": "https://github.com/fukyor/"
