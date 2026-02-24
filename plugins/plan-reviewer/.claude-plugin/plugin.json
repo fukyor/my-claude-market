@@ -1,0 +1,19 @@
+
+{
+  "name": "plan-viewer",
+  "version": "1.0.0",
+  "description": "Adds a /pv skill for create skills",
+  "author": {
+    "name": "gzy",
+    "url": "https://github.com/fukyor/"
+  },
+  "homepage": "https://github.com/",
+  "repository": "https://github.com/",
+  "license": "MIT",
+  "keywords": [
+    "plan-viewer",
+    "pv"
+  ],
+  "skills": ["./skills/pv"],
+  "agents": []
+}
