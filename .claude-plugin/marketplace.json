@@ -28,7 +28,7 @@
     {
       "name": "plan-viewer",
       "source": "./plugins/plan-reviewer",
-      "description": "Adds a /pv skill for review pla",
+      "description": "Adds a /pv skill for review plan",
       "strict": true
     }
   ]
