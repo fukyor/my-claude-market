@@ -22,9 +22,46 @@ description: 用于审查和改进代码实现层面的计划，检查冗余代�
 
 这是审查的核心环节。必须真正读懂代码库中的相关代码，才能判断计划的逻辑是否正确、设计是否冗余。
 
+#### 2.0 前置步骤：检测 GitNexus 并获取项目全局上下文（必须首先执行）
+
+> **此步骤是第二阶段的入口，必须在所有其他审查步骤之前完成。**
+
+1. **读取项目根目录的 `CLAUDE.md`**：
+   - 使用 Read 工具读取当前项目根目录下的 `CLAUDE.md` 文件
+   - 检查其中是否包含 `<!-- gitnexus:start -->` 标记
+   - 如果包含，说明该项目已由 GitNexus 索引，进入下面的 GitNexus 增强流程
+   - 如果不包含或文件不存在，跳过本步骤，直接使用 2.1 的传统审查方式
+
+2. **按 `CLAUDE.md` 中的指引初始化 GitNexus 上下文**（仅 GitNexus 可用时）：
+   - 读取 `gitnexus://repo/{name}/context` — 获取代码库概览和索引新鲜度
+   - 如果索引已过期（stale），在终端中运行 `npx gitnexus analyze` 刷新索引
+   - 按照 `CLAUDE.md` 中的 Skills 表格，根据审查任务类型读取对应的 skill 文件
+
+3. **选择与审查任务匹配的 GitNexus skill**：
+
+   | 审查需求 | 应调用的 GitNexus skill |
+   |---------|----------------------|
+   | 理解计划涉及的架构和代码流程 | `gitnexus-exploring`（使用 `gitnexus_query` + `gitnexus_context`） |
+   | 评估计划修改的影响范围/爆炸半径 | `gitnexus-impact-analysis`（使用 `gitnexus_impact` + `gitnexus_detect_changes`） |
+   | 排查计划中可能引入的 bug | `gitnexus-debugging`（使用 `gitnexus_query` + `gitnexus_cypher`） |
+   | 评估计划中的重构/重命名操作 | `gitnexus-refactoring`（使用 `gitnexus_rename` dry_run + `gitnexus_impact`） |
+   | 查询 GitNexus 可用工具和资源 | `gitnexus-guide`（工具/资源/Schema 速查） |
+
+> **原则**：GitNexus 可用时，优先使用 GitNexus 工具获取结构化的代码智能信息，再结合 Read/Grep 阅读源码细节。GitNexus 不可用时，回退到纯 Read/Grep 流程。
+
 #### 2.1 读懂现有代码
 
 对计划中涉及的每个修改点：
+
+**GitNexus 增强流程**（GitNexus 可用时优先使用）：
+1. 使用 `gitnexus_context({name: "<符号名>"})` 获取目标符号的 360° 视图：
+   - 调用者（谁调用它）、被调用者（它调用谁）
+   - 所属的执行流程（Processes）
+2. 使用 `gitnexus_query({query: "<相关概念>"})` 查找与计划相关的所有执行流程
+3. 读取 `gitnexus://repo/{name}/process/{processName}` 追踪完整执行链路
+4. 结合 Read 读取源码文件确认实现细节
+
+**传统流程**（GitNexus 不可用时回退）：
 1. 使用 Read 读取计划指定的文件和行号范围，以及其上下文（前后50行）
 2. 理解现有代码的：
    - 数据结构定义（字段、类型、关系）
@@ -54,7 +91,8 @@ description: 用于审查和改进代码实现层面的计划，检查冗余代�
 这是最关键的审查维度之一：
 
 1. **搜索相似实现**：
-   - 使用 Grep 搜索计划中新函数的核心逻辑关键词
+   - **GitNexus 增强**：使用 `gitnexus_query({query: "<计划中新功能的描述>"})` 搜索代码库中是否已存在相似的执行流程或符号
+   - **传统方式**：使用 Grep 搜索计划中新函数的核心逻辑关键词
    - 检查代码库中是否已有功能相似的实现
    - 如果计划说"参考XXX的实现"或"与XXX结构一致"，必须读取XXX并对比
 
@@ -68,8 +106,26 @@ description: 用于审查和改进代码实现层面的计划，检查冗余代�
    - 新增的接口/结构体是否可以用现有的替代？
    - 步骤数量是否可以精简？
 
-#### 2.4 代码库验证（具体策略）
+#### 2.4 影响范围与风险评估（GitNexus 增强）
 
+> 如果 GitNexus 可用，此步骤应替代传统的手动搜索验证。
+
+**GitNexus 增强流程**：
+1. **影响范围分析**：
+   - 对计划中每个要修改的符号，运行 `gitnexus_impact({target: "<符号名>", direction: "upstream"})` 获取爆炸半径
+   - 重点关注 d=1（直接依赖，**必定受影响**）和 d=2（间接依赖，**可能受影响**）
+   - 评估风险等级：<5 个符号=低，5-15 个符号=中，>15 个符号=高
+
+2. **执行流程检查**：
+   - 读取 `gitnexus://repo/{name}/processes` 查看所有执行流程
+   - 确认计划的修改会影响哪些执行流程
+   - 使用 `gitnexus_context` 深入检查关键流程中的符号
+
+3. **变更检测**（如果已有代码改动）：
+   - 使用 `gitnexus_detect_changes({scope: "all"})` 检测当前 git 变更影响的范围
+   - 交叉验证计划声称的影响范围与实际影响是否一致
+
+**传统流程**（GitNexus 不可用时回退）：
 1. **结构体/类验证**：
    - 提取计划中引用的结构体名（如 ConnectionInfo）
    - 使用 Grep 搜索其定义：`type ConnectionInfo struct`
