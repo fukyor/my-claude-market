@@ -178,4 +178,3 @@ description: 用于审查和改进代码实现层面的计划，检查冗余代�
 ## 参考资源
 
 - `references/review-criteria.md` - 详细的审查准则和检查清单
-- `references/bug-patterns.md` - 常见bug模式和识别方法

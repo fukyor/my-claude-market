@@ -1,7 +1,7 @@
 {
-  "name": "xlsx-plugin",
+  "name": "pencil",
   "version": "1.0.0",
-  "description": "Adds a /xlsx skill for create skills",
+  "description": "Adds a /pencil skill for ui",
   "author": {
     "name": "gzy",
     "url": "https://github.com/fukyor/"
@@ -10,7 +10,9 @@
   "repository": "https://github.com/",
   "license": "MIT",
   "keywords": [
-    "xlsx"
+    "pencil",
+    "ui",
+    "design"
   ],
   "skills": [
     "./skills/"

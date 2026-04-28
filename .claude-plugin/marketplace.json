@@ -30,6 +30,12 @@
       "source": "./plugins/plan-reviewer",
       "description": "Adds a /pv skill for review plan",
       "strict": true
+    },
+    {
+      "name": "pencil",
+      "source": "./plugins/pencil",
+      "description": "Adds a /pencil skill for ui",
+      "strict": true
     }
   ]
 }
