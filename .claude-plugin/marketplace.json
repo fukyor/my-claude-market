@@ -36,6 +36,12 @@
       "source": "./plugins/pencil",
       "description": "Adds a /pencil skill for ui",
       "strict": true
+    },
+    {
+      "name": "playwright-cli",
+      "source": "./plugins/playwright",
+      "description": "Adds a /playwright-cli skill",
+      "strict": true
     }
   ]
 }

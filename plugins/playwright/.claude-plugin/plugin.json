@@ -1,0 +1,21 @@
+
+{
+  "name": "playwright-cli",
+  "version": "1.0.0",
+  "description": "its playwright-cli skill",
+  "author": {
+    "name": "gzy",
+    "url": "https://github.com/fukyor/"
+  },
+  "homepage": "https://github.com/fukyor/",
+  "repository": "https://github.com/fukyor/",
+  "license": "MIT",
+  "keywords": [
+    "playwright",
+    "pw",
+    "pwt",
+    "play"
+  ],
+  "skills": ["./skills/playwright"],
+  "agents": []
+}

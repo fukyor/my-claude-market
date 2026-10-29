@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../anthropic-agent-skills"
+		},
+		{
+			"path": "../../everything-claude-code"
+		}
+	],
+	"settings": {}
+}
